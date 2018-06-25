@@ -19,6 +19,7 @@ def word_counter(filename):
     with open(filename) as f:
         for line in f:
             for word in line.split():
+                word = word.strip(".,-/?!").lower()
                 word_counts[word] = word_counts.get(word, 0) + 1
 
     return word_counts
@@ -33,5 +34,5 @@ def print_word_counts(word_counts):
         print(f'{word} {count}')
 
 
-counts = word_counter("twain.txt")
+counts = word_counter("test.txt")
 print_word_counts(counts)
