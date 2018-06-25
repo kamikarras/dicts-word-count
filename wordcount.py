@@ -15,15 +15,11 @@ def word_counter(filename):
     """
 
     word_counts = {}
-    all_words = []
 
-    with open(filename, "r") as f:
+    with open(filename) as f:
         for line in f:
-            line = line.rstrip()
-            all_words.extend(line.split())
-
-    for word in all_words:
-        word_counts[word] = word_counts.get(word, 0) + 1
+            for word in line.split():
+                word_counts[word] = word_counts.get(word, 0) + 1
 
     return word_counts
 
