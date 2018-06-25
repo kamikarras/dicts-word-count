@@ -7,6 +7,7 @@
 # add items to count
 # return dictionary
 import sys
+from collections import Counter
 
 
 def word_counter(filename):
@@ -15,13 +16,12 @@ def word_counter(filename):
 
     """
 
-    word_counts = {}
-
     with open(filename) as f:
-        for line in f:
-            for word in line.split():
-                word = word.strip(".,-/?!").lower()
-                word_counts[word] = word_counts.get(word, 0) + 1
+        read_data = f.read()
+        word_list = [word.strip(".,-/?!").lower()
+                     for word in read_data.split()]
+
+        word_counts = Counter(word_list)
 
     return word_counts
 
