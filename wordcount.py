@@ -27,3 +27,15 @@ def word_counter(filename):
 
     return word_counts
 
+
+def print_word_counts(word_counts):
+    """
+    Takes dictionary and prints out each word and its count
+    """
+
+    for word, count in word_counts.items():
+        print(f'{word} {count}')
+
+
+counts = word_counter("twain.txt")
+print_word_counts(counts)
