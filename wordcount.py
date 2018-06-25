@@ -31,7 +31,10 @@ def print_word_counts(word_counts):
     Takes dictionary and prints out each word and its count
     """
 
-    for word, count in word_counts.items():
+    for word, count in sorted(word_counts.items(),
+                      key=lambda word_tuple: (-word_tuple[1], word_tuple[0]),
+                      ):
+    
         print(f'{word} {count}')
 
 
