@@ -6,6 +6,7 @@
 # declare a dictionary
 # add items to count
 # return dictionary
+import sys
 
 
 def word_counter(filename):
@@ -34,5 +35,5 @@ def print_word_counts(word_counts):
         print(f'{word} {count}')
 
 
-counts = word_counter("test.txt")
+counts = word_counter(sys.argv[1])
 print_word_counts(counts)
