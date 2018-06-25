@@ -22,4 +22,8 @@ def word_counter(filename):
             line = line.rstrip()
             all_words.extend(line.split())
 
-    
+    for word in all_words:
+        word_counts[word] = word_counts.get(word, 0) + 1
+
+    return word_counts
+
